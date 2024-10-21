@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 import { Button } from "@/components/ui/button"
-import  NavBar from "./components/Navbar section/NavBar"
-import {HeroSection} from "./components/HeroSection/HeroSection"
-import Footer from "./components/FooterSection/Footer"
-import ArticleSection from "./components/ArticleSection/ArticleSection";
+import NavBar from "./components/NavBar";
+import {HeroSection} from "./components/HeroSection"
+import Footer from "./components/Footer"
+import {ArticleSection} from "./components/ArticleSection";
+
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <NavBar />
       <HeroSection />
       <ArticleSection/>
+      {/* <BlogCard/> */}
       <Footer />
    
       

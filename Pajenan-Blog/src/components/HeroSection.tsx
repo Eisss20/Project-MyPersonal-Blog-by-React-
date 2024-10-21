@@ -18,7 +18,7 @@ export function HeroSection() {
             </section>
           </article>
           <img
-            src="/Thomaspic.jpg"
+           src="./src/assets/Thomaspic.png" 
             alt="Personalpic"
             className="h-[500px] w-[350px] xl:w-[400px] object-cover rounded-lg shadow-lg xl:w-1/3 mx-4 mb-8 mt-5 xl:mb-0"
           />
