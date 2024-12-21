@@ -1,23 +1,54 @@
-import HLogo from "./assets/IconHH.svg";
-import HambergerNav from "./assets/hambergerbar.svg";
-import { Linkedin,Github, } from 'lucide-react';
+import { Menu } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-
-export function NavBar() {
+export default function NavBar() {
   return (
-    <nav className="flex items-center justify-between py-4 px-10 bg[#DAD6D1] border-b ">
-      <div>
-      <img src="/src/assets/IconHH.svg"  alt="Icon H" className="w-10 h-10" />
+    <nav className="flex items-center justify-between py-4 px-4 md:px-8 bg-background border-b border-muted">
+      {/* โลโก้ */}
+      <a href="/" className="text-2xl font-bold">
+        Thomson P<span className="text-green-400">.</span>
+      </a>
+
+      {/* ปุ่มสำหรับหน้าจอขนาดใหญ่ */}
+      <div className="hidden sm:flex space-x-4">
+        <a
+          href="/login"
+          className="px-8 py-2 rounded-full text-foreground border border-foreground hover:border-muted-foreground hover:text-muted-foreground transition-colors"
+        >
+          Log in
+        </a>
+        <a
+          href="/signup"
+          className="px-8 py-2 bg-foreground text-white rounded-full hover:bg-muted-foreground transition-colors"
+        >
+          Sign up
+        </a>
       </div>
-      <div className="xl:hidden">
-      <img src="/src/assets/hambergerbar.svg"  alt="hambergerBar" className="w-5 h-5" />
-      </div>
+
+      {/* เมนู Dropdown สำหรับหน้าจอขนาดเล็ก */}
+      <DropdownMenu>
+        <DropdownMenuTrigger className="sm:hidden focus:outline-none">
+          <Menu />
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="sm:hidden w-screen rounded-none mt-4 flex flex-col gap-6 py-10 px-6">
+          <a
+            href="/login"
+            className="px-8 py-4 rounded-full text-center text-foreground border border-foreground hover:border-muted-foreground hover:text-muted-foreground transition-colors"
+          >
+            Log in
+          </a>
+          <a
+            href="/signup"
+            className="px-8 py-4 bg-foreground text-center text-white rounded-full hover:bg-muted-foreground transition-colors"
+          >
+            Sign up
+          </a>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </nav>
   );
 }
-
-
-
-
-
-export default NavBar
